@@ -111,10 +111,11 @@
     .grid { display: grid; grid-template-columns: minmax(280px,.9fr) minmax(320px,1.1fr); gap: 24px; padding-top: 32px; }
     .panel { padding: clamp(20px,4vw,34px); }
     .lineup { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
-    .lineup li { display: grid; grid-template-columns: 150px 1fr; gap: 12px; min-height: 50px; align-items: center; border-bottom: 1px solid rgba(255,42,191,.28); }
+    .lineup li { display: grid; grid-template-columns: 150px 1fr auto; gap: 12px; min-height: 50px; align-items: center; border-bottom: 1px solid rgba(255,42,191,.28); }
     .lineup time { color: var(--muted); }
-    .lineup a { color: var(--text); font-size: 1.18rem; font-weight: 900; text-decoration: none; }
-    .lineup a:hover { color: var(--cyan); }
+    .lineup .artist-name { color: var(--text); font-size: 1.18rem; font-weight: 900; }
+    .lineup .ig-link { display: inline-flex; justify-content: center; align-items: center; min-width: 48px; min-height: 34px; padding: 0 14px; border: 1px solid rgba(0,216,255,.72); border-radius: 999px; color: var(--cyan); font-size: .86rem; font-weight: 900; text-decoration: none; box-shadow: 0 0 14px rgba(0,216,255,.36); }
+    .lineup .ig-link:hover { color: var(--text); border-color: rgba(255,42,191,.85); box-shadow: 0 0 18px rgba(255,42,191,.45); }
     .copy-block { display: grid; gap: 10px; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,42,191,.32); line-height: 1.7; }
     .copy-block p { margin: 0; }
     .floor-plan {
@@ -171,7 +172,8 @@
       .hero, .grid { grid-template-columns: 1fr; }
       .hero { min-height: auto; }
       .facts { grid-template-columns: 1fr; }
-      .lineup li { grid-template-columns: 1fr; gap: 4px; padding: 10px 0; }
+      .lineup li { grid-template-columns: 1fr auto; gap: 6px 10px; padding: 10px 0; }
+      .lineup time { grid-column: 1 / -1; }
     }
     @media (max-width: 420px) {
       .panel { padding: 18px; }
@@ -208,13 +210,13 @@
 
     <section class="grid">
       <div class="panel">
-        <h2>DJ Line Up</h2>
+        <h2>LINE UP</h2>
         <ol class="lineup">
-          <li><time>23:00 - 00:30</time><a href="https://www.instagram.com/vveralyra/" target="_blank" rel="noreferrer">Vera</a></li>
-          <li><time>00:30 - 01:30</time><a href="https://www.instagram.com/hsu_0427/" target="_blank" rel="noreferrer">條通小百吉</a></li>
-          <li><time>01:30 - 03:00</time><a href="https://www.instagram.com/reshueimeile/" target="_blank" rel="noreferrer">DJ 小安</a></li>
-          <li><time>03:00 - 04:00</time><a href="https://www.instagram.com/ch0u4/" target="_blank" rel="noreferrer">ch0u4</a></li>
-          <li><time>04:00 - 05:00</time><a href="https://www.instagram.com/anj.uwu/" target="_blank" rel="noreferrer">Anju</a></li>
+          <li><time>23:00 - 00:30</time><span class="artist-name">Vera</span><a class="ig-link" href="https://www.instagram.com/vveralyra/" target="_blank" rel="noreferrer" aria-label="Vera Instagram">IG</a></li>
+          <li><time>00:30 - 01:30</time><span class="artist-name">條通小百吉</span><a class="ig-link" href="https://www.instagram.com/hsu_0427/" target="_blank" rel="noreferrer" aria-label="條通小百吉 Instagram">IG</a></li>
+          <li><time>01:30 - 03:00</time><span class="artist-name">DJ 小安</span><a class="ig-link" href="https://www.instagram.com/reshueimeile/" target="_blank" rel="noreferrer" aria-label="DJ 小安 Instagram">IG</a></li>
+          <li><time>03:00 - 04:00</time><span class="artist-name">ch0u4</span><a class="ig-link" href="https://www.instagram.com/ch0u4/" target="_blank" rel="noreferrer" aria-label="ch0u4 Instagram">IG</a></li>
+          <li><time>04:00 - 05:00</time><span class="artist-name">Anju</span><a class="ig-link" href="https://www.instagram.com/anj.uwu/" target="_blank" rel="noreferrer" aria-label="Anju Instagram">IG</a></li>
         </ol>
         <div class="copy-block">
           <h3>Romantic Disco</h3>
